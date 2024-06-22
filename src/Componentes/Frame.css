@@ -1,0 +1,40 @@
+.myDrawer {
+    /* overflow: hidden !important; */
+    border-radius: 2rem;
+    flex-shrink: 0;
+
+    /* Chrome, Safari, Opera */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE 10+ */
+    -ms-overflow-style: none;
+}
+
+
+
+/* Estilos para el papel del Drawer (MuiDrawer-paper) */
+.myDrawer .MuiDrawer-paper {
+
+    /* Puedes ajustar a maximizedWidth */
+    box-sizing: border-box;
+}
+
+.myDrawer * {
+
+    /* Chrome, Safari, Opera */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE 10+ */
+    -ms-overflow-style: none;
+    /* overflow: hidden !important; */
+}
