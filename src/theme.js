@@ -5,7 +5,7 @@ export default {
     ...esES,
     ...{
         typography: {
-            "fontFamily": `"wotfard", sans-serif`,
+            "fontFamily": `"Roboto", sans-serif`,//`"Rubik", sans-serif`,////`"Poppins", sans-serif`,//`"wotfard", sans-serif`,
             "fontSize": 14,
             "fontWeightLight": 300,
             "fontWeightRegular": 400,

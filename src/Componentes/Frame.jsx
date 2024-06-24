@@ -1,72 +1,18 @@
 import LogoIFTS24 from '../LogoIFTS24.webp';
 import '../App.css';
 import theme from '../theme';
-
+import Content from './Content/Content';
 import * as React from 'react';
 import './Frame.css'
 import { Fragment, useState, useEffect } from 'react';
-import { Outlet, useNavigate, useLocation } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import AppBar from '@mui/material/AppBar';
-import CssBaseline from '@mui/material/CssBaseline';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import IconButton from '@mui/material/IconButton';
-import BalanceIcon from '@mui/icons-material/Balance';
-import SummarizeIcon from '@mui/icons-material/Summarize';
-import WorkIcon from '@mui/icons-material/Work';
-import AddIcon from '@mui/icons-material/Add';
-import PersonIcon from '@mui/icons-material/Person';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import DiscountIcon from '@mui/icons-material/Discount';
-import SafetyDividerIcon from '@mui/icons-material/SafetyDivider';
-import LocalActivityIcon from '@mui/icons-material/LocalActivity';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import { AppBar,Avatar,Box , Button,CssBaseline, Drawer,Grid, IconButton,List,ListItemIcon,ListItem,ListItemButton,ListItemText, Popover,Typography,Toolbar  } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import AdbIcon from '@mui/icons-material/Adb';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import Collapse from '@mui/material/Collapse';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import { DialogContent, DialogActions } from '@mui/material';
-import FormControl from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import FormHelperText from '@mui/material/FormHelperText';
-import TextField from '@mui/material/FormHelperText';
-import Assesment from '@mui/icons-material/Assessment';
-import UploadFileIcon from '@mui/icons-material/UploadFile';
-import ArchiveIcon from '@mui/icons-material/Archive';
-import Campaign from '@mui/icons-material/Campaign'
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import Group from '@mui/icons-material/Group';
-import ShareIcon from '@mui/icons-material/Share';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
-import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import BalanceIcon from '@mui/icons-material/Balance';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
-import CircularProgress from '@mui/material/CircularProgress';
-import Grid from "@mui/material/Grid";
-import Popover from '@mui/material/Popover';
-import { FormContainer, TextFieldElement, AutocompleteElement, SelectElement, SliderElement } from 'react-hook-form-mui';
 import { motion, useAnimate, usePresence, AnimatePresence } from "framer-motion"
 const Frame = () => {
   const reportes = [
@@ -74,94 +20,84 @@ const Frame = () => {
       nombreAlumno: 'German Zaragosa',
       tema: 'Economia',
       colorEnfasis: '#118DFF',
-      colorSecundario: '#282024',
-      url: "https://app.powerbi.com/view?r=eyJrIjoiYzU5MmVkYmEtMDllNC00NzA3LTllMGMtYzU4OWVjZjViYmViIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
-      //url: <iframe title={'Economia'} width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
+      colorSecundario: '#1A1A1A',
+      url: "https://app.powerbi.com/view?r=eyJrIjoiMTMxYjliNGYtMWZkZi00N2FkLWFmY2YtZWFlYzFjMGQ2NzhmIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
+      //url: <iframe title="ReporteGerFinal (1)" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMTMxYjliNGYtMWZkZi00N2FkLWFmY2YtZWFlYzFjMGQ2NzhmIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title={'Economia'} width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
       icon: CurrencyExchangeIcon,
     },
     {
-      nombreAlumno: 'Laura Pajaro',
-      tema: 'Salud Materna y perinatal',
-      colorEnfasis: '#F20690',
+      nombreAlumno: 'Vanina Mendez',
+      tema: 'Indice de desarrollo humano',
+      colorEnfasis: '#E66C37',
       colorSecundario: '#282024',
-      url: "https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
-      //url: <iframe title='Salud Materna y perinatal' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
-      icon: HealthAndSafetyIcon,
+      url: "https://app.powerbi.com/view?r=eyJrIjoiNTVhOGM3YzItOWI4My00YWI3LTkzYjItMTg1OGRjNDRjNjc2IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
+      // url: <iframe title="Reporte_Final_Vani" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiNTVhOGM3YzItOWI4My00YWI3LTkzYjItMTg1OGRjNDRjNjc2IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title='Desigualdad' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
+      icon: Diversity3Icon,
+    },
+    {
+      nombreAlumno: 'Juan Manual ',
+      tema: 'Desigualdad',
+      colorEnfasis: '#E66C37',
+      colorSecundario: '#282024',//Color secundario
+      url: "https://app.powerbi.com/view?r=eyJrIjoiYzZhMDZlMTYtMTAzNS00OTEyLWFjM2MtMzY2YmFjOTUwZjc5IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
+      // url: <iframe title="Trabajo_Final_PW_BI_Ultimo_JM (1)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiYzZhMDZlMTYtMTAzNS00OTEyLWFjM2MtMzY2YmFjOTUwZjc5IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title='Desigualdad' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
+      icon: BalanceIcon,
     },
     {
       nombreAlumno: 'Rodolfo',
       tema: 'Educacion',
-      colorEnfasis: '#118DFF',
-      colorSecundario: '#282024',
-      url: "https://app.powerbi.com/view?r=eyJrIjoiYzU5MmVkYmEtMDllNC00NzA3LTllMGMtYzU4OWVjZjViYmViIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
-      //url: <iframe title='Educacion' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
+      colorEnfasis: '#00FE33',
+      colorSecundario: '#1F2722',
+      url:"https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
+      //url: <iframe title="TPGrupalRoli(Educacion)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title='Educacion' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
       icon: MenuBookIcon,
     },
     {
-      nombreAlumno: 'Juan Manual y Vanina Mendez',
-      tema: 'Desigualdad',
-      colorEnfasis: '#118DFF',
+      nombreAlumno: 'Laura Pajaro',
+      tema: 'Salud materna y perinatal',
+      colorEnfasis: '#F20690',
       colorSecundario: '#282024',
-      url: "https://app.powerbi.com/view?r=eyJrIjoiYzU5MmVkYmEtMDllNC00NzA3LTllMGMtYzU4OWVjZjViYmViIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
-      // url: <iframe title='Desigualdad' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
-      icon: Diversity3Icon,
+      url: "https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
+      //url:<iframe title="TPGRUPAL" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe> <iframe title='Salud Materna y perinatal' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
+      icon: HealthAndSafetyIcon,
     },
+  
+    
 
   ]
   const [reporte, setReporte] = useState(reportes[0])
-  const [minimized, setMinimized] = React.useState(false);
+  const [minimized, setMinimized] = useState(false);
   const TopBar = () => {
-
-    const Bar = () => {
-      const [anchorElNav, setAnchorElNav] = React.useState(null);
-      const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-      const handleOpenNavMenu = (event) => setAnchorElNav(event.currentTarget);
-      const handleOpenUserMenu = (event) => setAnchorElUser(event.currentTarget);
-      const handleCloseNavMenu = () => setAnchorElNav(null);
-      const handleCloseUserMenu = (e, cb) => {
-        setAnchorElUser(null);
-        return cb ? cb() : null;
-      };
-
-      return (
-        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, width: '100%', left: 0 }}>
-          {/* Desktop Version */}
-          <Toolbar sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex', backgroundColor: reporte?.colorSecundario } }}>
-            <Grid container direction={'row'} alignItems={'center'}>
-              {/* Logo */}
-              <Grid item xs={4}>
-                <img src={LogoIFTS24} alt="Logo IFTS 24" style={{display: 'flex', justifyContent: 'flex-start'}} width={'104.2px'} height={'32.875px'} />
-              </Grid>
-              {/* Perfil */}
-              <Grid item xs={4}>
-                <Typography variant='h5' fontWeight='bold'textAlign={'center'} children={minimized ? reporte?.tema : ''} />
-              </Grid>
-              <Grid item xs={4}>
-              <Typography  fontWeight='bold'textAlign={'center'} children={reporte?.nombreAlumno} />
-                <Box style={{ position: 'absolute', marginTop: '15px', top: '0px', right: '20px' }} >
-                  <IconButton component={motion.div} whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} whileTap={{ scale: 0.9 }} sx={{ p: 0 }} onClick={handleOpenUserMenu}>
-                    <Avatar alt={reporte?.nombreAlumno} src="/static/images/avatar/2.jpg" />
-                  </IconButton>
-                </Box>
-              </Grid>
-            </Grid>
-          </Toolbar>
-        </AppBar>)
-    };
-
     return (
-      <Fragment>
-        <Bar />
-      </Fragment>
-
-    )
+      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, width: '100%', left: 0 }}>
+        {/* Desktop Version */}
+        <Toolbar sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex', backgroundColor: reporte?.colorSecundario } }}>
+          <Grid container direction={'row'} alignItems={'center'}>
+            {/* Logo */}
+            <Grid item xs={4}>
+              <img src={LogoIFTS24} alt="Logo IFTS 24" style={{ display: 'flex', justifyContent: 'flex-start' }} width={'104.2px'} height={'32.875px'} />
+            </Grid>
+            {/* Perfil */}
+            <Grid item xs={4}>
+              <Typography variant='h5' fontWeight='bold' textAlign={'center'} children={minimized ? reporte?.tema : ''} />
+            </Grid>
+            <Grid item xs={4}>
+              <Typography  textAlign={'center'} children={reporte?.nombreAlumno} />
+              <Box style={{ position: 'absolute', marginTop: '15px', top: '0px', right: '20px' }} >
+                <IconButton component={motion.div} whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} whileTap={{ scale: 0.9 }} sx={{ p: 0 }} onClick={() => console.log('avatar')}>
+                  <Avatar alt={reporte?.nombreAlumno} src="/static/images/avatar/2.jpg" />
+                </IconButton>
+              </Box>
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </AppBar>)
   };
-  const SideBar = () => {
 
+  const SideBar = () => {
     const maximizedWidth = '18rem';
     const minimizedWidth = '4.5rem';
-
+  
     const collapseIconParams = {
       sx: { color: reporte?.colorEnfasis, width: '2.5rem', height: '2.5rem', backgroundColor: reporte?.colorSecundario, borderRadius: '2rem', padding: '.3rem', boxShadow: '#80808029 1px 1px 2px 2px', border: 'solid 3px ' + reporte?.colorEnfasis },
       onClick: e => setMinimized(!minimized)
@@ -243,27 +179,17 @@ const Frame = () => {
       </>
     )
   };
-  const Content = () => {
-    return (<Box component="main" sx={{ flexGrow: 1, p: 3, pt: '5rem', backgroundColor: reporte?.colorSecundario }}>
-
-      <iframe title={reporte?.tema} width="800" height="510" src={reporte.url} frameborder="0" allowFullScreen="true"></iframe>
-
-    </Box>)
-  };
+ 
 
   return (
     <div className="App">
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <TopBar />
+      
         <SideBar></SideBar>
-        <Content />
+        <Content reporte={reporte}/>
       </Box>
-      {/* <p>REPORTE LAU</p>
-      <iframe title="TPGRUPAL" width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
-
-      <p>REPORTE GER</p>
-      <iframe title="ReporteGerFinal" width="800" height="836" src="https://app.powerbi.com/view?r=eyJrIjoiYzU5MmVkYmEtMDllNC00NzA3LTllMGMtYzU4OWVjZjViYmViIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe> */}
     </div>);
 }
 
