@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/informe-ifts24-app/static/css/main.621ca35d.css",
-    "main.js": "/informe-ifts24-app/static/js/main.a850fa21.js",
+    "main.js": "/informe-ifts24-app/static/js/main.aafc0c2e.js",
     "static/js/453.bf697c20.chunk.js": "/informe-ifts24-app/static/js/453.bf697c20.chunk.js",
     "static/media/LogoIFTS24.webp": "/informe-ifts24-app/static/media/LogoIFTS24.2a448fabf12b394be207.webp",
     "static/media/logo.svg": "/informe-ifts24-app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/informe-ifts24-app/index.html",
     "main.621ca35d.css.map": "/informe-ifts24-app/static/css/main.621ca35d.css.map",
-    "main.a850fa21.js.map": "/informe-ifts24-app/static/js/main.a850fa21.js.map",
+    "main.aafc0c2e.js.map": "/informe-ifts24-app/static/js/main.aafc0c2e.js.map",
     "453.bf697c20.chunk.js.map": "/informe-ifts24-app/static/js/453.bf697c20.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.621ca35d.css",
-    "static/js/main.a850fa21.js"
+    "static/js/main.aafc0c2e.js"
   ]
 }

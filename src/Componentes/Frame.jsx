@@ -17,8 +17,8 @@ import { motion, useAnimate, usePresence, AnimatePresence } from "framer-motion"
 const Frame = () => {
   const reportes = [
     {
-      nombreAlumno: 'German Zaragosa',
-      tema: 'Economia',
+      nombreAlumno: 'German Agostino Zaragoza',
+      tema: 'Economía',
       colorEnfasis: '#118DFF',
       colorSecundario: '#1A1A1A',
       url: "https://app.powerbi.com/view?r=eyJrIjoiMTMxYjliNGYtMWZkZi00N2FkLWFmY2YtZWFlYzFjMGQ2NzhmIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
@@ -26,16 +26,16 @@ const Frame = () => {
       icon: CurrencyExchangeIcon,
     },
     {
-      nombreAlumno: 'Vanina Mendez',
-      tema: 'Indice de desarrollo humano',
+      nombreAlumno: 'Vanina Gabriela Mendez',
+      tema: 'Índice de desarrollo humano',
       colorEnfasis: '#E66C37',
       colorSecundario: '#282024',
       url: "https://app.powerbi.com/view?r=eyJrIjoiNTVhOGM3YzItOWI4My00YWI3LTkzYjItMTg1OGRjNDRjNjc2IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
-      // url: <iframe title="Reporte_Final_Vani" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiNTVhOGM3YzItOWI4My00YWI3LTkzYjItMTg1OGRjNDRjNjc2IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title='Desigualdad' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
-      icon: Diversity3Icon,
+      // url:<iframe title="Reporte_Final_Vani" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiNTVhOGM3YzItOWI4My00YWI3LTkzYjItMTg1OGRjNDRjNjc2IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+       icon: Diversity3Icon,
     },
     {
-      nombreAlumno: 'Juan Manual ',
+      nombreAlumno: 'Juan Manuel Reinoso',
       tema: 'Desigualdad',
       colorEnfasis: '#E66C37',
       colorSecundario: '#282024',//Color secundario
@@ -44,22 +44,22 @@ const Frame = () => {
       icon: BalanceIcon,
     },
     {
-      nombreAlumno: 'Rodolfo',
-      tema: 'Educacion',
+      nombreAlumno: 'Rodolfo Nicolas Aguirre ',
+      tema: 'Educación',
       colorEnfasis: '#00FE33',
       colorSecundario: '#1F2722',
       url:"https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
-      //url: <iframe title="TPGrupalRoli(Educacion)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title='Educacion' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
+      //url: <iframe title="TPGrupalRoli(Educacion)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title="TPGrupalRoli(Educacion)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title='Educacion' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
       icon: MenuBookIcon,
     },
     {
-      nombreAlumno: 'Laura Pajaro',
+      nombreAlumno: 'Laura Pájaro',
       tema: 'Salud materna y perinatal',
       colorEnfasis: '#F20690',
       colorSecundario: '#282024',
       url: "https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
-      //url:<iframe title="TPGRUPAL" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe> <iframe title='Salud Materna y perinatal' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
-      icon: HealthAndSafetyIcon,
+      //url:<iframe title="TPGRUPAL" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title="TPGRUPAL" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+       icon: HealthAndSafetyIcon,
     },
   
     
@@ -75,7 +75,7 @@ const Frame = () => {
           <Grid container direction={'row'} alignItems={'center'}>
             {/* Logo */}
             <Grid item xs={4}>
-              <img src={LogoIFTS24} alt="Logo IFTS 24" style={{ display: 'flex', justifyContent: 'flex-start' }} width={'104.2px'} height={'32.875px'} />
+            <a target="_blank" href="https://www.ifts24.edu.ar/tec-sup-ciencias-datos-inteligencia-artificial" rel="noreferrer"><img src={LogoIFTS24} alt="Logo IFTS 24" style={{ display: 'flex', justifyContent: 'flex-start' }} width={'104.2px'} height={'32.875px'} /></a>
             </Grid>
             {/* Perfil */}
             <Grid item xs={4}>
@@ -132,7 +132,7 @@ const Frame = () => {
                 <ListItemIcon>
                   <Icon sx={{ color: `${reporte.tema === label && minimized ? theme.palette.secondary.light : null}`, mb: minimized ? '1vh' : 0 }} />
                 </ListItemIcon>
-                {minimized ? null : <ListItemText primary={label} sx={{ color: `${reporte.tema === label ? theme.palette.secondary.light : null}`, fontWeight: 'bold' }} />}
+                {minimized ? null : <ListItemText variant={'h3'} primary={label} fontWeight='700' sx={{ color: `${reporte.tema === label ? theme.palette.secondary.light : null}` }} />}
               </ListItemButton>
             </ListItem>
             <Popover
