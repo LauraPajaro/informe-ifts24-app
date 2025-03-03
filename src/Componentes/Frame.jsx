@@ -16,42 +16,42 @@ import Diversity3Icon from '@mui/icons-material/Diversity3';
 import { motion, useAnimate, usePresence, AnimatePresence } from "framer-motion"
 const Frame = () => {
   const reportes = [
-    {
-      nombreAlumno: 'German Agostino Zaragoza',
-      tema: 'Economía',
-      colorEnfasis: '#118DFF',
-      colorSecundario: '#1A1A1A',
-      url: "https://app.powerbi.com/view?r=eyJrIjoiMTMxYjliNGYtMWZkZi00N2FkLWFmY2YtZWFlYzFjMGQ2NzhmIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
-      //url: <iframe title="ReporteGerFinal (1)" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMTMxYjliNGYtMWZkZi00N2FkLWFmY2YtZWFlYzFjMGQ2NzhmIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title={'Economia'} width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
-      icon: CurrencyExchangeIcon,
-    },
-    {
-      nombreAlumno: 'Vanina Gabriela Mendez',
-      tema: 'Índice de desarrollo humano',
-      colorEnfasis: '#E66C37',
-      colorSecundario: '#282024',
-      url: "https://app.powerbi.com/view?r=eyJrIjoiNTVhOGM3YzItOWI4My00YWI3LTkzYjItMTg1OGRjNDRjNjc2IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
-      // url:<iframe title="Reporte_Final_Vani" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiNTVhOGM3YzItOWI4My00YWI3LTkzYjItMTg1OGRjNDRjNjc2IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
-       icon: Diversity3Icon,
-    },
-    {
-      nombreAlumno: 'Juan Manuel Reinoso',
-      tema: 'Desigualdad',
-      colorEnfasis: '#E66C37',
-      colorSecundario: '#282024',//Color secundario
-      url: "https://app.powerbi.com/view?r=eyJrIjoiYzZhMDZlMTYtMTAzNS00OTEyLWFjM2MtMzY2YmFjOTUwZjc5IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
-      // url: <iframe title="Trabajo_Final_PW_BI_Ultimo_JM (1)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiYzZhMDZlMTYtMTAzNS00OTEyLWFjM2MtMzY2YmFjOTUwZjc5IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title='Desigualdad' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
-      icon: BalanceIcon,
-    },
-    {
-      nombreAlumno: 'Rodolfo Nicolas Aguirre ',
-      tema: 'Educación',
-      colorEnfasis: '#00FE33',
-      colorSecundario: '#1F2722',
-      url:"https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
-      //url: <iframe title="TPGrupalRoli(Educacion)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title="TPGrupalRoli(Educacion)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title='Educacion' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
-      icon: MenuBookIcon,
-    },
+    // {
+    //   nombreAlumno: 'German Agostino Zaragoza',
+    //   tema: 'Economía',
+    //   colorEnfasis: '#118DFF',
+    //   colorSecundario: '#1A1A1A',
+    //   url: "https://app.powerbi.com/view?r=eyJrIjoiMTMxYjliNGYtMWZkZi00N2FkLWFmY2YtZWFlYzFjMGQ2NzhmIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
+    //   //url: <iframe title="ReporteGerFinal (1)" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMTMxYjliNGYtMWZkZi00N2FkLWFmY2YtZWFlYzFjMGQ2NzhmIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title={'Economia'} width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
+    //   icon: CurrencyExchangeIcon,
+    // },
+    // {
+    //   nombreAlumno: 'Vanina Gabriela Mendez',
+    //   tema: 'Índice de desarrollo humano',
+    //   colorEnfasis: '#E66C37',
+    //   colorSecundario: '#282024',
+    //   url: "https://app.powerbi.com/view?r=eyJrIjoiNTVhOGM3YzItOWI4My00YWI3LTkzYjItMTg1OGRjNDRjNjc2IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
+    //   // url:<iframe title="Reporte_Final_Vani" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiNTVhOGM3YzItOWI4My00YWI3LTkzYjItMTg1OGRjNDRjNjc2IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+    //    icon: Diversity3Icon,
+    // },
+    // {
+    //   nombreAlumno: 'Juan Manuel Reinoso',
+    //   tema: 'Desigualdad',
+    //   colorEnfasis: '#E66C37',
+    //   colorSecundario: '#282024',//Color secundario
+    //   url: "https://app.powerbi.com/view?r=eyJrIjoiYzZhMDZlMTYtMTAzNS00OTEyLWFjM2MtMzY2YmFjOTUwZjc5IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
+    //   // url: <iframe title="Trabajo_Final_PW_BI_Ultimo_JM (1)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiYzZhMDZlMTYtMTAzNS00OTEyLWFjM2MtMzY2YmFjOTUwZjc5IiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title='Desigualdad' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
+    //   icon: BalanceIcon,
+    // },
+    // {
+    //   nombreAlumno: 'Rodolfo Nicolas Aguirre ',
+    //   tema: 'Educación',
+    //   colorEnfasis: '#00FE33',
+    //   colorSecundario: '#1F2722',
+    //   url:"https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9",
+    //   //url: <iframe title="TPGrupalRoli(Educacion)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title="TPGrupalRoli(Educacion)" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiY2NmZmM5YWItYmJkNS00MTNhLWFhZTMtM2JjZmM3MzkyMDdiIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe><iframe title='Educacion' width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiOWE4MjdlYTQtNGIzZS00MTcwLTk3YzktYmUwNGRkYjAwYTlkIiwidCI6IjYxZTlhYWViLWFmOWMtNDNmYi1iMjIxLTgwNGU3ZTQ0N2JhNyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>,
+    //   icon: MenuBookIcon,
+    // },
     {
       nombreAlumno: 'Laura Pájaro',
       tema: 'Salud materna y perinatal',
